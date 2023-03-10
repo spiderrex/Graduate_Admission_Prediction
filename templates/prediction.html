@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Admission Prediction</title>
+  </head>
+  <body class='bg-gray-300'>
+    <header class="text-gray-600 body-font">
+		<div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+		  <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+			<img  class ="object-cover object-center rounded" width="100" height="150" src="static\index.svg">
+			<span class="ml-3 text-xl">Admission Prediction</span>
+		  </a>
+		  <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
+			<a href="/" class="mr-5 hover:text-gray-900">Home</a>
+			
+		  </nav>
+		</div>
+	  </header>
+      <div>
+      <form method="POST" action="/predict" style="text-align :center">
+		<label for="gre_score">GRE Score:</label>
+		<input type="number" id="gre_score" name="GRE Score" required><br><br>
+
+		<label for="toefl_score">TOEFL Score:</label>
+		<input type="number" id="toefl_score" name="TOEFL Score" required><br><br>
+
+		<label for="university_rating">University Rating:</label>
+		<input type="number" id="university_rating" name="University Rating" required><br><br>
+
+		<label for="sop_score">Statement of Purpose (SOP) Score:</label>
+		<input type="number" step="0.01" id="sop_score" name="SOP" required><br><br>
+
+		<label for="lor_score">Letter of Recommendation (LOR) Score:</label>
+		<input type="number" step="0.01" id="lor_score" name="LOR" required><br><br>
+
+		<label for="cgpa">Undergraduate GPA (CGPA):</label>
+		<input type="number" step="0.01" id="cgpa" name="CGPA" required><br><br>
+
+		<label for="research">Research Experience (0 or 1):</label>
+		<input type="number" id="research" name="Research" min="0" max="1" required><br><br>
+        <button  type="submit" class="btn btn-primary">Predict</button>
+      </div>
+
+	  <div>
+		<br>
+		<br>
+		<h3 style="text-align:center">{{prediction_text}}</h3>
+	  </div>
+
+	  
+
+      <footer class="text-gray-600 body-font">
+		<div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+		  <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+			<img  class ="object-cover object-center rounded" width="50" height="100" src="static\index.svg">
+		  </a>
+		 
+		  <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">SAP - Edunet Project
+		  </p>
+		 
+	
+		</div>
+	  </footer>
+    
+	
+    
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
